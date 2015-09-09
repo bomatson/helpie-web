@@ -6,6 +6,7 @@ const server = app.use(function(request, response) {
   response.end("hello world");
 });
 
-server.listen(3000, function() {
-  console.log('Server listening...');
+var port = process.env.PORT || 3000;
+server.listen(port, function() {
+  console.log('Server listening on port ' + port + '...');
 });
