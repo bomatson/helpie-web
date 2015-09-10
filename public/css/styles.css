@@ -1,3 +1,35 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+body { 
+  font-family: helvetica;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 100;
+  padding-top: 15px;
+  color: #3fa9f5;
+}
+
 #splash {
   background: #3fa9f5;
   height: 440px;
@@ -12,7 +44,6 @@
 }
 
 #splash h2 {
-  font-family: helvetica;
   color: #ffffff;
   text-align: center;
   margin-top: 30px;
@@ -21,7 +52,7 @@
 }
 
 
-.start {
+.circle {
   display: block;
   margin-top: 40px;
   margin-left: auto;
@@ -38,8 +69,54 @@
   line-height:150px;
   text-align: center;
   text-decoration: none;
-  font-family: helvetica;
   font-weight: 700;
   font-size: 24px;
   text-transform: uppercase;
+}
+
+
+#header {
+  background: #3fa9f5;
+  padding: 0 0 0 0;
+  margin 0 0 0 0;
+}
+
+#header img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 130px;
+  height: 75px;
+}
+
+#sub {
+  height: 130px;
+  background: rgba(63, 169, 245, 0.1);
+  text-align: center;
+}
+
+#sub h2 {
+  color: #3fa9f5;
+  font-weight: 400;
+  font-size: 24px;
+  padding-top: 40px;
+}
+
+#sub h2 span {
+  font-weight: 100;
+   margin-left: 5px;
+}
+
+.description {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40;
+  width: 160px;
+  line-height: 18px;
+  text-align: center;
+}
+
+#find {
+  margin-top: 60px;
 }

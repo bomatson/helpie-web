@@ -14,7 +14,10 @@ app.use(express.static('public'));
 
 const server = app
   .get('/', function (req, res) {
-    res.render('index', { title: 'Hey', message: 'Hello there!'});
+    res.render('index', { title: 'HELPIE'});
+  })
+  .get('/start', function (req, res) {
+    res.render('start', { title: 'HELPIE'});
   })
   .post('/checkins', function(request, response) {
     var responseText = "";
