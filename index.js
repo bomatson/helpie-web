@@ -25,7 +25,8 @@ const server = app
         responseText = responseText + "Response from Wit for audio stream: ";
         if (err) response.end("Error: ", err);
         responseText = responseText + JSON.stringify(res, null, " ");
-        models.CheckIn.create({name: 'a-test', location: 'this place', audio: string}).then(function(checkIn){
+        var name = res.outcomes[0].entities.name[0].value;
+        models.CheckIn.create({name: name, location: 'this place', audio: string}).then(function(checkIn){
           responseText = responseText + "SAVED";
           response.end(responseText);
         })
@@ -44,12 +45,10 @@ const server = app
   })
   .get('/checkins', function(request,response) {
     models.CheckIn.findAll().then(function(checkIns) {
-      responseText = "<ul>";
-      checkIns.forEach(function(checkIn) {
-        responseText = responseText + "<li>" + checkIn.id + "</li>";
-      });
-      responseText = responseText + "</ul>";
-      response.end(responseText);
+      function toJSON(checkIn) {
+        return { id: checkIn.id, name: checkIn.name };
+      }
+      response.send(JSON.stringify(checkIns.map(toJSON), null, ""));
     });
   });
 
