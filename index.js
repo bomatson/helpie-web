@@ -19,6 +19,9 @@ const server = app
   .get('/start', function (req, res) {
     res.render('start', { title: 'HELPIE'});
   })
+  .get('/find', function (req, res) {
+    res.render('find', { title: 'HELPIE'});
+  })
   .post('/checkins', function(request, response) {
     var responseText = "";
     getRawBody(request, {
