@@ -9,8 +9,13 @@ var models = require('./models');
 var ACCESS_TOKEN = 'EEBIDF2KTIIDA574WDZP7NUYPSVLG6IG';
 
 const app = express();
+app.set('view engine', 'jade');
+app.use(express.static('public'));
 
 const server = app
+  .get('/', function (req, res) {
+    res.render('index', { title: 'Hey', message: 'Hello there!'});
+  })
   .post('/checkins', function(request, response) {
     var responseText = "";
     getRawBody(request, {

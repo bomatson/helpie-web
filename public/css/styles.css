@@ -1,0 +1,45 @@
+#splash {
+  background: #3fa9f5;
+  height: 440px;
+}
+
+#splash img {
+  display: block;
+  width: 450px;
+  padding-top: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#splash h2 {
+  font-family: helvetica;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 24px;
+  font-weight: 100; 
+}
+
+
+.start {
+  display: block;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #3fa9f5;
+  background: #fff;
+  border-width: 10px;
+  border-color: #3fa9f5;
+  border-style: solid;
+  line-height:150px;
+  text-align: center;
+  text-decoration: none;
+  font-family: helvetica;
+  font-weight: 700;
+  font-size: 24px;
+  text-transform: uppercase;
+}
