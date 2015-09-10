@@ -1,14 +1,20 @@
 var express = require('express');
 var models = require('./models');
-var bodyParser = require('body-parser');
+var getRawBody = require('raw-body');
 
 const app = express();
 
 const server = app
-  .use(bodyParser.raw({}))
   .post('/checkins', function(request, response) {
-    console.log(request.body.length);
-    response.end("Done");
+    getRawBody(request, {
+    }, function (err, string) {
+      if (err) {
+        console.log("ERROR: " + err);
+        response.end('ERROR!');
+      }
+      console.log(string);
+      response.end('Upload length = ' + string.length);
+    })
   })
   .get('/checkins', function(request,response) {
     models.CheckIn.findAll().then(function(checkIns) {
