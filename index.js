@@ -1,6 +1,9 @@
 var express = require('express');
 var models = require('./models');
 var getRawBody = require('raw-body');
+var wit = require('node-wit');
+
+var ACCESS_TOKEN = 'EEBIDF2KTIIDA574WDZP7NUYPSVLG6IG';
 
 const app = express();
 
@@ -9,11 +12,16 @@ const server = app
     getRawBody(request, {
     }, function (err, string) {
       if (err) {
-        console.log("ERROR: " + err);
         response.end('ERROR!');
       }
-      console.log(string);
-      response.end('Upload length = ' + string.length);
+      response.send('Upload length = ' + string.length);
+
+      var stream = fs.createReadStream('/Users/rudy/sample.wav');
+      wit.captureSpeechIntent(ACCESS_TOKEN, stream, "audio/wav", function (err, res) {
+        response.send("Response from Wit for audio stream: ");
+        if (err) response.end("Error: ", err);
+        response.end(JSON.stringify(res, null, " "));
+      });
     })
   })
   .get('/checkins', function(request,response) {
